@@ -1,0 +1,1 @@
+class alt_gem {}
