@@ -31,7 +31,7 @@ Puppet::Type.type(:package).provide :alt_gem, :parent => Puppet::Provider::Packa
     end
 
     begin
-      list = execute(gem_list_command).lines.
+      list = execute(gem_list_command).split("\n").
         map {|set| gemsplit(set) }.
         reject {|x| x.nil? }
     rescue Puppet::ExecutionFailure => detail
